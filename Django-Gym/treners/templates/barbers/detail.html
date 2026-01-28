@@ -1,0 +1,88 @@
+{% extends "layout.html" %} {% block content %}
+<div class="d-flex align-items-center gap-2 my-2">
+  <a href="javascript:history.back()" class="btn btn-sm">
+    <i class="fa-solid fa-arrow-left"></i>
+  </a>
+  <h1 class="mb-0">{{ t.trainer_detail_title }}</h1>
+</div>
+<div class="row g-4">
+  <div class="col-lg-4">
+    <div class="card h-100">
+      <div class="card-body text-center">
+        {% if barber.photo %}
+        <img
+          style="
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+          "
+          src="{{barber.photo.url}}"
+          alt="{{ barber.name }}"
+          class="mb-3"
+        />
+        {% else %}
+        <img
+          style="
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+          "
+          src="https://images.unsplash.com/photo-1521805103424-d8f8430e8934?auto=format&fit=crop&w=400&q=80"
+          alt="{{ barber.name }}"
+          class="mb-3"
+        />
+        {% endif %}
+        <h5 class="card-title">{{ barber.name }}</h5>
+        <p class="card-text text-muted">{{ barber.get_position_display }}</p>
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge text-bg-primary"
+            >{{ barber.experience }} {{ t.trainer_detail_experience_badge }}</span
+          >
+          <span class="badge text-bg-success">{{ barber.rating }}/5</span>
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <strong>{{ t.trainer_detail_birthdate }}:</strong>
+          {{ barber.birthdate }}
+        </li>
+        <li class="list-group-item">
+          <strong>{{ t.trainer_detail_phone }}:</strong>
+          <a href="tel:{{ barber.phone }}">{{ barber.phone }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-lg-8">
+    <div class="card h-100">
+      <div class="card-header">{{ t.trainer_detail_about }}</div>
+      <div class="card-body">
+        <p class="mb-1">
+          <strong>{{ t.trainer_detail_name }}:</strong> {{ barber.name }}
+        </p>
+        <p class="mb-1">
+          <strong>{{ t.trainer_detail_specialization }}:</strong>
+          {{ barber.get_position_display }}
+        </p>
+        <p class="mb-1">
+          <strong>{{ t.trainer_detail_experience }}:</strong>
+          {{ barber.experience }} {{ t.trainer_detail_years }}
+        </p>
+        <p class="mb-1">
+          <strong>{{ t.trainer_detail_rating }}:</strong> {{ barber.rating }} / 5
+        </p>
+        <p class="mb-1">
+          <strong>{{ t.trainer_detail_birthdate }}:</strong> {{ barber.birthdate }}
+        </p>
+        <p class="mb-0">
+          <strong>{{ t.trainer_detail_phone }}:</strong>
+          <a href="tel:{{ barber.phone }}">{{ barber.phone }}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

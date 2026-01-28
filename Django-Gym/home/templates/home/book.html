@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="py-5">
+  <div class="row g-4 align-items-start">
+    <div class="col-lg-7">
+      <span class="section-label">{{ t.book_label }}</span>
+      <h1 class="section-title">{{ t.book_title }}</h1>
+      <p class="text-muted">{{ t.book_desc }}</p>
+
+      <div class="schedule-card">
+        <form method="post">
+          {% csrf_token %} {% if form.non_field_errors %}
+          <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+          {% endif %} {% for field in form %}
+          <div class="mb-3">
+            <label for="{{ field.id_for_label }}" class="form-label">
+              {{ field.label }}
+            </label>
+            {{ field }} {% for error in field.errors %}
+            <div class="invalid-feedback d-block">{{ error }}</div>
+            {% endfor %}
+          </div>
+          {% endfor %}
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-gym">
+              {{ t.book_submit }}
+            </button>
+            <a href="/" class="btn btn-gym-outline">{{ t.book_back }}</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="hero-card hero-card-light h-100">
+        <h3>{{ t.book_card_title }}</h3>
+        <ul class="booking-list">
+          <li>{{ t.book_card_item1 }}</li>
+          <li>{{ t.book_card_item2 }}</li>
+          <li>{{ t.book_card_item3 }}</li>
+          <li>{{ t.book_card_item4 }}</li>
+        </ul>
+        <div class="hero-card-price">
+          <span>{{ t.book_card_price }}</span>
+          <small>{{ t.book_card_price_note }}</small>
+        </div>
+        <div class="hero-card-note">
+          {{ t.book_card_contact }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,35 @@
+[
+  {
+    "model": "reviews.Review",
+    "pk": 1,
+    "fields": {
+      "name": "Олена Р.",
+      "rating": 5,
+      "text": "Дуже сильна команда тренерів. Програма підібрана ідеально.",
+      "is_published": true,
+      "created_at": "2026-01-05T10:30:00Z"
+    }
+  },
+  {
+    "model": "reviews.Review",
+    "pk": 2,
+    "fields": {
+      "name": "Максим К.",
+      "rating": 4,
+      "text": "Класи HIIT дуже інтенсивні, але результат відчутний вже через тиждень.",
+      "is_published": true,
+      "created_at": "2026-01-12T15:20:00Z"
+    }
+  },
+  {
+    "model": "reviews.Review",
+    "pk": 3,
+    "fields": {
+      "name": "Ірина П.",
+      "rating": 5,
+      "text": "Зона відновлення — топ. Люблю стретчинг після тренувань.",
+      "is_published": true,
+      "created_at": "2026-01-20T08:10:00Z"
+    }
+  }
+]

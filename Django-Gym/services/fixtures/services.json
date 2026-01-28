@@ -1,0 +1,80 @@
+[
+  {
+    "model": "services.Service",
+    "pk": 1,
+    "fields": {
+      "name": "Power Strength",
+      "description": "Силовий клас для базових та просунутих рухів.",
+      "duration_minutes": 60,
+      "price": "349.00",
+      "level": "I",
+      "category": "G",
+      "active": true
+    }
+  },
+  {
+    "model": "services.Service",
+    "pk": 2,
+    "fields": {
+      "name": "HIIT Pulse",
+      "description": "Інтервальні тренування для спалювання калорій.",
+      "duration_minutes": 45,
+      "price": "319.00",
+      "level": "A",
+      "category": "G",
+      "active": true
+    }
+  },
+  {
+    "model": "services.Service",
+    "pk": 3,
+    "fields": {
+      "name": "Mobility Flow",
+      "description": "Мобільність і стретчинг для відновлення.",
+      "duration_minutes": 50,
+      "price": "279.00",
+      "level": "B",
+      "category": "R",
+      "active": true
+    }
+  },
+  {
+    "model": "services.Service",
+    "pk": 4,
+    "fields": {
+      "name": "Personal Coaching",
+      "description": "Персональна сесія з тренером під ваші цілі.",
+      "duration_minutes": 60,
+      "price": "799.00",
+      "level": "I",
+      "category": "P",
+      "active": true
+    }
+  },
+  {
+    "model": "services.Service",
+    "pk": 5,
+    "fields": {
+      "name": "Recovery Stretch",
+      "description": "Розслаблення та відновлення після тренувань.",
+      "duration_minutes": 40,
+      "price": "249.00",
+      "level": "B",
+      "category": "R",
+      "active": true
+    }
+  },
+  {
+    "model": "services.Service",
+    "pk": 6,
+    "fields": {
+      "name": "Boxing Conditioning",
+      "description": "Кардіо + техніка боксу для витривалості.",
+      "duration_minutes": 60,
+      "price": "399.00",
+      "level": "A",
+      "category": "G",
+      "active": true
+    }
+  }
+]

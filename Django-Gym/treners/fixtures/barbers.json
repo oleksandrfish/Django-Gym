@@ -1,0 +1,41 @@
+[
+  {
+    "model": "barbers.Barber",
+    "pk": 1,
+    "fields": {
+      "name": "Марко Савчук",
+      "position": "M",
+      "rating": 4.9,
+      "phone": "+38-093-555-12-12",
+      "experience": 12,
+      "birthdate": "1988-03-12",
+      "gender": "M"
+    }
+  },
+  {
+    "model": "barbers.Barber",
+    "pk": 2,
+    "fields": {
+      "name": "Ірина Левченко",
+      "position": "S",
+      "rating": 4.7,
+      "phone": "+38-067-555-34-34",
+      "experience": 8,
+      "birthdate": "1993-07-21",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "barbers.Barber",
+    "pk": 3,
+    "fields": {
+      "name": "Данило Кравець",
+      "position": "J",
+      "rating": 4.3,
+      "phone": "+38-099-555-67-67",
+      "experience": 3,
+      "birthdate": "1999-11-05",
+      "gender": "M"
+    }
+  }
+]

@@ -1,0 +1,584 @@
+#barberTable tbody img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+:root {
+  --gym-ink: #141a16;
+  --gym-dark: #0e1512;
+  --gym-cream: #f7f2e8;
+  --gym-sand: #e6dcc9;
+  --gym-accent: #ff7a30;
+  --gym-accent-2: #b4f272;
+  --gym-shadow: rgba(15, 20, 18, 0.18);
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background: var(--gym-cream);
+  color: var(--gym-ink);
+}
+
+h1,
+h2,
+h3,
+.navbar-brand,
+.hero-title,
+.section-title {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.navbar-gym {
+  background: var(--gym-cream);
+  border-bottom: 1px solid var(--gym-sand);
+}
+
+.navbar-gym .navbar-brand {
+  font-size: 1.9rem;
+  color: var(--gym-dark);
+}
+
+.navbar-gym .nav-link {
+  color: var(--gym-dark);
+  font-weight: 600;
+}
+
+.navbar-gym .nav-link.active,
+.navbar-gym .nav-link:hover {
+  color: var(--gym-accent);
+}
+
+.lang-switch .nav-link {
+  font-weight: 600;
+  color: var(--gym-dark);
+}
+
+.lang-switch .nav-link:hover {
+  color: var(--gym-accent);
+}
+
+.auth-links .nav-link {
+  font-weight: 600;
+  color: var(--gym-dark);
+}
+
+.auth-links .btn {
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+
+.hero {
+  background: linear-gradient(130deg, #0f1814 0%, #1c2e25 60%, #0f1814 100%);
+  color: #fef7ed;
+  border-radius: 28px;
+  padding: 52px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 26px 60px rgba(8, 12, 10, 0.35);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  right: -80px;
+  top: -60px;
+  background: radial-gradient(circle, rgba(255, 122, 48, 0.6), transparent 70%);
+  opacity: 0.9;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  left: -60px;
+  bottom: -40px;
+  background: radial-gradient(circle, rgba(180, 242, 114, 0.5), transparent 70%);
+}
+
+.hero > .row {
+  position: relative;
+  z-index: 1;
+}
+
+.section-label {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  color: var(--gym-accent-2);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 4vw, 4.2rem);
+  margin-bottom: 16px;
+}
+
+.hero-lead {
+  font-size: 1.1rem;
+  max-width: 520px;
+  margin-bottom: 24px;
+  color: rgba(255, 247, 237, 0.8);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.btn-gym {
+  background: var(--gym-accent);
+  color: var(--gym-dark);
+  border: none;
+  padding: 12px 24px;
+  font-weight: 700;
+  border-radius: 999px;
+  box-shadow: 0 12px 24px rgba(255, 122, 48, 0.3);
+}
+
+.btn-gym:hover {
+  background: #ff904f;
+  color: var(--gym-dark);
+}
+
+.btn-gym-outline {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fef7ed;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  background: transparent;
+}
+
+.btn-gym-outline:hover {
+  border-color: var(--gym-accent);
+  color: var(--gym-accent);
+}
+
+.navbar-gym .btn-gym-outline {
+  color: var(--gym-dark);
+  border-color: var(--gym-accent);
+}
+
+.navbar-gym .btn-gym-outline:hover {
+  background: var(--gym-accent);
+  color: var(--gym-dark);
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.metric {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 14px 18px;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+}
+
+.metric span {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.metric small {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 18px 40px rgba(7, 12, 10, 0.4);
+}
+
+.hero-card h3 {
+  font-size: 2rem;
+}
+
+.hero-card-price {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+  color: #fef7ed;
+}
+
+.hero-card-price span {
+  font-size: 2rem;
+}
+
+.hero-card-note {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-card-light {
+  background: #f8f2e8;
+  color: #1f2723;
+  border: 1px solid var(--gym-sand);
+  box-shadow: 0 18px 40px var(--gym-shadow);
+}
+
+.hero-card-light h3,
+.hero-card-light p,
+.hero-card-light li,
+.hero-card-light span,
+.hero-card-light small {
+  color: #1f2723;
+}
+
+.hero-card-light .hero-card-price span {
+  color: #151b17;
+}
+
+.hero-card-light .hero-card-price small {
+  color: #4a5952;
+}
+
+.hero-card-light .hero-card-note {
+  color: #4a5952;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  min-height: 160px;
+  box-shadow: 0 16px 40px var(--gym-shadow);
+}
+
+.schedule-card,
+.bookings-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 16px 40px var(--gym-shadow);
+}
+
+.schedule-card .btn-gym-outline {
+  color: var(--gym-dark);
+  border-color: var(--gym-accent);
+}
+
+.schedule-card .btn-gym-outline:hover {
+  background: var(--gym-accent);
+  color: var(--gym-dark);
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--gym-sand);
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-item strong {
+  display: block;
+  font-weight: 700;
+}
+
+.schedule-item span {
+  color: #5b6a61;
+}
+
+.bookings-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bookings-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gym-sand);
+}
+
+.bookings-list li:last-child {
+  border-bottom: none;
+}
+
+.trainer-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 18px 40px var(--gym-shadow);
+}
+
+.booking-list {
+  margin: 16px 0 0;
+  padding-left: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.booking-list li {
+  margin-bottom: 8px;
+}
+
+.hero-card-light .booking-list {
+  color: #2f3c35;
+}
+
+.hero-card-light .booking-list li {
+  color: inherit;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 18px 40px var(--gym-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.service-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: var(--gym-dark);
+  color: #fef7ed;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.service-level {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gym-accent);
+}
+
+.service-meta {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 18px 40px var(--gym-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-stars i {
+  color: var(--gym-accent);
+}
+
+.review-date {
+  font-size: 0.85rem;
+  color: #6b7b71;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  grid-auto-rows: 160px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 16px 32px var(--gym-shadow);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.gallery-grid img:nth-child(3n) {
+  grid-row: span 2;
+}
+
+.price-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 18px 40px var(--gym-shadow);
+  position: relative;
+}
+
+.price-card h3 {
+  font-size: 2rem;
+}
+
+.price-card .price {
+  font-size: 2.4rem;
+  color: var(--gym-accent);
+  margin-bottom: 16px;
+}
+
+.price-card ul {
+  padding-left: 18px;
+  margin-bottom: 20px;
+}
+
+.price-card.featured {
+  background: var(--gym-dark);
+  color: #fef7ed;
+}
+
+.price-card.featured .price {
+  color: var(--gym-accent-2);
+}
+
+.price-card.featured ul {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.price-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--gym-accent);
+  color: var(--gym-dark);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-card {
+  background: linear-gradient(120deg, #fef5e8, #fff);
+  border-radius: 26px;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 18px 40px var(--gym-shadow);
+}
+
+.contact-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.table-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 12px 18px;
+  box-shadow: 0 16px 40px var(--gym-shadow);
+}
+
+.table-card thead {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: #6b7b71;
+}
+
+.table-card .table > :not(caption) > * > * {
+  padding: 14px 12px;
+}
+
+.admin-page .btn-gym-outline {
+  color: var(--gym-dark);
+  border-color: var(--gym-accent);
+}
+
+.admin-page .btn-gym-outline:hover {
+  background: var(--gym-accent);
+  color: var(--gym-dark);
+}
+
+.form-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 18px 40px var(--gym-shadow);
+}
+
+.form-card-header {
+  margin-bottom: 24px;
+}
+
+.form-card .btn-gym-outline {
+  color: var(--gym-dark);
+  border-color: var(--gym-accent);
+}
+
+.form-card .btn-gym-outline:hover {
+  background: var(--gym-accent);
+  color: var(--gym-dark);
+}
+
+.card.trainer-card {
+  border: none;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px var(--gym-shadow);
+  overflow: hidden;
+}
+
+.card.trainer-card .card-body {
+  padding: 22px;
+}
+
+.card.trainer-card .card-footer {
+  border-top: 1px solid var(--gym-sand);
+  background: #fff;
+}
+
+.card.trainer-card img {
+  border-bottom: 1px solid var(--gym-sand);
+}
+
+@media (max-width: 991px) {
+  .hero {
+    padding: 36px;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

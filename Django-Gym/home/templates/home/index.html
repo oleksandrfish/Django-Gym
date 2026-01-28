@@ -1,0 +1,220 @@
+{% extends "layout.html" %} {% block content %}
+<section class="hero my-4">
+  <div class="row align-items-center g-4">
+    <div class="col-lg-7">
+      <span class="section-label">{{ t.home_hero_label }}</span>
+      <h1 class="hero-title">{{ t.home_hero_title }}</h1>
+      <p class="hero-lead">
+        {{ t.home_hero_lead }}
+      </p>
+      <div class="hero-actions">
+        <a href="/book" class="btn btn-gym">{{ t.home_hero_cta_primary }}</a>
+        <a href="#schedule" class="btn btn-gym-outline"
+          >{{ t.home_hero_cta_secondary }}</a
+        >
+      </div>
+      <div class="hero-metrics">
+        <div class="metric">
+          <span>24/7</span>
+          <small>{{ t.home_metric_access }}</small>
+        </div>
+        <div class="metric">
+          <span>40+</span>
+          <small>{{ t.home_metric_classes }}</small>
+        </div>
+        <div class="metric">
+          <span>15</span>
+          <small>{{ t.home_metric_trainers }}</small>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <div class="hero-card">
+        <h3>{{ t.home_card_title }}</h3>
+        <p>{{ t.home_card_desc }}</p>
+        <div class="hero-card-price">
+          <span>{{ t.home_card_price }}</span>
+          <small>{{ t.home_card_price_note }}</small>
+        </div>
+        <a href="#memberships" class="btn btn-light w-100 mt-3"
+          >{{ t.home_card_button }}</a
+        >
+        <div class="hero-card-note">
+          {{ t.home_card_note }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <div class="feature-card">
+        <h3>{{ t.home_feature1_title }}</h3>
+        <p>{{ t.home_feature1_desc }}</p>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="feature-card">
+        <h3>{{ t.home_feature2_title }}</h3>
+        <p>{{ t.home_feature2_desc }}</p>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="feature-card">
+        <h3>{{ t.home_feature3_title }}</h3>
+        <p>{{ t.home_feature3_desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" id="schedule">
+  <div class="row g-4 align-items-start">
+    <div class="col-lg-6">
+      <span class="section-label">{{ t.home_schedule_label }}</span>
+      <h2 class="section-title">{{ t.home_schedule_title }}</h2>
+      <div class="schedule-card">
+        <div class="schedule-item">
+          <div>
+            <strong>{{ t.home_schedule_item1_title }}</strong>
+            <span>{{ t.home_schedule_item1_desc }}</span>
+          </div>
+          <span>{{ t.home_schedule_item1_time }}</span>
+        </div>
+        <div class="schedule-item">
+          <div>
+            <strong>{{ t.home_schedule_item2_title }}</strong>
+            <span>{{ t.home_schedule_item2_desc }}</span>
+          </div>
+          <span>{{ t.home_schedule_item2_time }}</span>
+        </div>
+        <div class="schedule-item">
+          <div>
+            <strong>{{ t.home_schedule_item3_title }}</strong>
+            <span>{{ t.home_schedule_item3_desc }}</span>
+          </div>
+          <span>{{ t.home_schedule_item3_time }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <span class="section-label">{{ t.home_bookings_label }}</span>
+      <h2 class="section-title">{{ t.home_bookings_title }}</h2>
+      <div class="bookings-card">
+        {% if bookings %}
+        <ul class="bookings-list">
+          {% for booking in bookings %}
+          <li>
+            <div>
+              <strong>{{ booking.customer_name }}</strong>
+              <span>{{ t.home_booking_trainer_label }} {{ booking.barber.name }}</span>
+            </div>
+            <span>{{ booking.appointment_date|date:"d.m.Y H:i" }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p class="mb-0">{{ t.home_bookings_empty }}</p>
+        {% endif %}
+        <a href="/book" class="btn btn-gym mt-3"
+          >{{ t.home_bookings_button }}</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" id="trainers">
+  <span class="section-label">{{ t.home_team_label }}</span>
+  <h2 class="section-title">{{ t.home_team_title }}</h2>
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <div class="trainer-card">
+        <h3>Марко Савчук</h3>
+        <p>{{ t.home_team_member1_desc }}</p>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="trainer-card">
+        <h3>Ірина Левченко</h3>
+        <p>{{ t.home_team_member2_desc }}</p>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="trainer-card">
+        <h3>Данило Кравець</h3>
+        <p>{{ t.home_team_member3_desc }}</p>
+      </div>
+    </div>
+  </div>
+  <a href="/barbers" class="btn btn-gym-outline mt-4"
+    >{{ t.home_team_button }}</a
+  >
+</section>
+
+<section class="py-5" id="memberships">
+  <span class="section-label">{{ t.home_memberships_label }}</span>
+  <h2 class="section-title">{{ t.home_memberships_title }}</h2>
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <div class="price-card">
+        <h3>Flex</h3>
+        <p class="price">{{ t.home_plan_flex_price }}</p>
+        <ul>
+          <li>{{ t.home_plan_flex_feature1 }}</li>
+          <li>{{ t.home_plan_flex_feature2 }}</li>
+          <li>{{ t.home_plan_flex_feature3 }}</li>
+        </ul>
+        <a href="/book" class="btn btn-gym w-100">{{ t.home_plan_button }}</a>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="price-card featured">
+        <div class="price-tag">{{ t.home_plan_unlimited_tag }}</div>
+        <h3>Unlimited</h3>
+        <p class="price">{{ t.home_plan_unlimited_price }}</p>
+        <ul>
+          <li>{{ t.home_plan_unlimited_feature1 }}</li>
+          <li>{{ t.home_plan_unlimited_feature2 }}</li>
+          <li>{{ t.home_plan_unlimited_feature3 }}</li>
+        </ul>
+        <a href="/book" class="btn btn-light w-100"
+          >{{ t.home_plan_button }}</a
+        >
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="price-card">
+        <h3>Coach Pro</h3>
+        <p class="price">{{ t.home_plan_coach_price }}</p>
+        <ul>
+          <li>{{ t.home_plan_coach_feature1 }}</li>
+          <li>{{ t.home_plan_coach_feature2 }}</li>
+          <li>{{ t.home_plan_coach_feature3 }}</li>
+        </ul>
+        <a href="/book" class="btn btn-gym w-100">{{ t.home_plan_button }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="contact-card">
+    <div>
+      <span class="section-label">{{ t.home_contact_label }}</span>
+      <h2 class="section-title">{{ t.home_contact_title }}</h2>
+      <p>{{ t.home_contact_line }}</p>
+    </div>
+    <div class="contact-actions">
+      <a href="/book" class="btn btn-gym"
+        >{{ t.home_contact_button_primary }}</a
+      >
+      <a href="/barbers/list" class="btn btn-gym-outline"
+        >{{ t.home_contact_button_secondary }}</a
+      >
+    </div>
+  </div>
+</section>
+{% endblock %}

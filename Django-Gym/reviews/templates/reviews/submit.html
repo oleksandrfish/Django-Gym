@@ -1,0 +1,4 @@
+{% extends "layout.html" %}
+{% block content %}
+{% include "components/review_form.html" with form_title=t.reviews_submit_title form_subtitle=t.reviews_submit_subtitle action_name=t.reviews_submit_action cancel_label=t.form_cancel %}
+{% endblock %}
