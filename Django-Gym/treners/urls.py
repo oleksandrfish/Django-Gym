@@ -5,7 +5,7 @@ from treners import views
 
 urlpatterns = [
     path('', views.barber_index, name="barber_index"),
-    # path('<str:text>/', views.barber_index, name="barber_index_search"),
+                                                                          
     path('list', views.barber_list),
     path('<int:pk>/', views.barber_detail, name="barber_detail"),
     path('delete/<int:pk>/', views.barber_delete),

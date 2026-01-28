@@ -28,10 +28,10 @@ def barber_detail(request, pk):
     barber = get_object_or_404(Barber, pk=pk)
     return render(request, "barbers/detail.html", {"barber": barber})
 
-# метод додавання нового барбера
+                                
 @staff_required
 def barber_create(request):
-    # якщо запит є POST, тоді додаємо елемент в базу
+                                                    
     if (request.method == "POST"):
         form = BarberForm(request.POST, request.FILES)
         if form.is_valid():
@@ -39,25 +39,25 @@ def barber_create(request):
             messages.success(request, f"Тренера {barber.name} успішно створено")
             return redirect(reverse("barber_detail", args=[barber.pk]))
     else:
-        # якщо запит не є POST, тоді показуємо порожню форму
+                                                            
         form = BarberForm()
     return render(request, "barbers/create.html", {"form": form})
 
 @staff_required
 def barber_update(request, pk):
-    # шукаємо барбера за id
+                           
     barber = get_object_or_404(Barber, pk=pk)
 
     if request.method == "POST":
-        # створюємо форму з даними з запиту та існуючого барбера
+                                                                
         form = BarberForm(request.POST, request.FILES, instance=barber)
         if form.is_valid():
-            # зберігаємо зміни в базу
+                                     
             barber = form.save()
             messages.success(request, f"Дані тренера {barber.name} оновлено")
             return redirect(reverse("barber_detail", args=[barber.pk]))
     else:
-        # створюємо форму з даними знайденого барбера
+                                                     
         form = BarberForm(instance=barber)
 
     return render(request, "barbers/edit.html", {"form": form})

@@ -2,7 +2,7 @@ from django.test import TestCase
 
 from treners.models import Barber
 
-# Create your tests here.
+                         
 class BarbersTests(TestCase):
     def test_barber_create(self):
         barber = Barber.objects.create(

@@ -7,7 +7,7 @@ class BarberAdmin(admin.ModelAdmin):
     search_fields = ['name', 'position']
     list_filter = ['position']
 
-# Register your models here.
+                            
 admin.site.register(Barber, BarberAdmin)
 
 @admin.register(Booking)

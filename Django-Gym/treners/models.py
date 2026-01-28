@@ -1,7 +1,6 @@
 from django.db import models
 from django.core.validators import RegexValidator, MinValueValidator, MaxValueValidator
 
-# Create your models here.
 class Barber(models.Model):
     GENDER_CHOICES = [
         ('M', 'Чоловік'),

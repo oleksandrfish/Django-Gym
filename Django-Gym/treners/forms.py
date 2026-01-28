@@ -64,5 +64,5 @@ class BookingForm(ModelForm):
             "barber": forms.Select(attrs={"class": "form-select"}),
         }
     
-# class BarberSearchForm(forms.Form):
-#     text = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Search barbers...'}))
+                                     
+                                                                                                                                        

@@ -7,7 +7,7 @@ from treners.models import Booking
 from treners.forms import BookingForm
 from home.forms import RegisterForm, LoginForm
 
-# Create your views here.
+                         
 def home(request):
     bookings = Booking.objects.all().order_by("appointment_date")
     return render(request, "home/index.html", {"bookings": bookings})
@@ -69,5 +69,5 @@ class CustomLoginView(LoginView):
         return kwargs
 
     def form_valid(self, form):
-        # Add your authentication logic here
+                                            
         return super().form_valid(form)

@@ -42,7 +42,7 @@ class FavoritesTests(TestCase):
         result = get_favorite_barbers(self.request)
         self.assertIn(1, result)
         self.assertEqual(len(result), 1)
-        # self.assertTrue(self.request.session.modified)
+                                                        
 
     def test_add_barber_to_favorites_multiple(self):
         """Test adding multiple barbers to favorites"""
@@ -51,7 +51,7 @@ class FavoritesTests(TestCase):
         add_barber_to_favorites(self.request, 3)
         result = get_favorite_barbers(self.request)
         self.assertEqual(result, [1, 2, 3])
-        # self.assertTrue(self.request.session.modified)
+                                                        
 
     def test_add_barber_to_favorites_duplicate(self):
         """Test adding duplicate barber to favorites"""
@@ -60,7 +60,7 @@ class FavoritesTests(TestCase):
         result = get_favorite_barbers(self.request)
         self.assertEqual(result, [1])
         self.assertEqual(len(result), 1)
-        # self.assertTrue(self.request.session.modified)
+                                                        
 
     def test_remove_barber_from_favorites(self):
         """Test removing a barber from favorites"""
@@ -71,7 +71,7 @@ class FavoritesTests(TestCase):
         self.assertNotIn(1, result)
         self.assertIn(2, result)
         self.assertEqual(len(result), 1)
-        # self.assertTrue(self.request.session.modified)
+                                                        
 
     def test_remove_barber_from_favorites_nonexistent(self):
         """Test removing a barber that doesn't exist in favorites"""
