@@ -14,7 +14,7 @@ class Barber(models.Model):
     ]
 
     name = models.CharField("Ім'я", max_length=100)
-    photo = models.ImageField("Фото", upload_to='barber_photos/', blank=True, null=True)
+    photo = models.ImageField("Фото", upload_to='treners_photos/', blank=True, null=True)
     experience = models.IntegerField(
         "Стаж (років)", validators=[MinValueValidator(0), MaxValueValidator(60)]
     )
